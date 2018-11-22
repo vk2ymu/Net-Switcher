@@ -18,7 +18,7 @@ gpio mode 7 in
                 cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
                 cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
                 cp /home/pi-star/configs/ysf2dmrcfg2 /etc/ysf2dmr
-                cp /home/pi-star/configs/ysf2nxdncfg2 /etc/ysf2nxd
+                cp /home/pi-star/configs/ysf2nxdncfg2 /etc/ysf2nxdn
 
         fi
         if [ $b -eq 0 ]
