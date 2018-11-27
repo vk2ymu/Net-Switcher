@@ -86,10 +86,6 @@ do
                         cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                         cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
                         cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
-
-
-                        cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
-                        cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
                         cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
                         cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
 
