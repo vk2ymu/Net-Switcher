@@ -14,11 +14,7 @@ gpio mode 7 in
         b=$(gpio read 7)
         if [ $b -eq 1 ]
         then
-                systemctl stop mmdvmhost.service
-                systemctl stop ysfgateway.service
-                systemctl stop ysf2dmr.service
-                systemctl stop ysf2nxdn.service
-                systemctl stop ysf2p25.service
+                
                 
                 cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
@@ -29,11 +25,7 @@ gpio mode 7 in
         fi
         if [ $b -eq 0 ]
         then
-                systemctl stop mmdvmhost.service
-                systemctl stop ysfgateway.service
-                systemctl stop ysf2dmr.service
-                systemctl stop ysf2nxdn.service
-                systemctl stop ysf2p25.service
+               
                 
                 cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
@@ -62,13 +54,6 @@ do
         b=$(gpio read 7)
         if [ $b != $lastVal ]
         then
-                # File manipulation taking place-stopping services
-                systemctl stop mmdvmhost.service
-                systemctl stop ysfgateway.service
-                systemctl stop ysf2dmr.service
-                systemctl stop ysf2nxdn.service
-                systemctl stop ysf2p25.service
-
                 # Read Switch position
                 lastVal=$b
 
@@ -115,6 +100,9 @@ do
         mount -o remount,ro /
 
         # Restarting services
+        systemctl restart dmrgateway.service
+        systemctl restart nxdngateway.service
+        systemctl restart p25gateway.service
         systemctl restart ysfgateway.service
         systemctl restart ysf2dmr.service
         systemctl restart ysf2nxdn.service
