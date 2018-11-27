@@ -14,7 +14,11 @@ gpio mode 7 in
         b=$(gpio read 7)
         if [ $b -eq 1 ]
         then
-                
+                cp /home/pi-star/configs/p25gatewaycfg2 /etc/p25gateway
+                cp /home/pi-star/configs/nxdngatewaycfg2 /etc/nxdngateway
+                cp /home/pi-star/configs/dmrgatewaycfg2 /etc/dmrgateway
+                cd /home/pi-star/configs/dmr2nxdncfg2 /etc/dmr2nxdn
+                cd /home/pi-star/configs/dmr2ysfcfg2 /etc/dmr2ysf
                 
                 cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
@@ -25,7 +29,11 @@ gpio mode 7 in
         fi
         if [ $b -eq 0 ]
         then
-               
+                cp /home/pi-star/configs/p25gatewaycfg1 /etc/p25gateway
+                cp /home/pi-star/configs/nxdngatewaycfg1 /etc/nxdngateway
+                cp /home/pi-star/configs/dmrgatewaycfg1 /etc/dmrgateway
+                cd /home/pi-star/configs/dmr2nxdncfg1 /etc/dmr2nxdn
+                cd /home/pi-star/configs/dmr2ysfcfg1 /etc/dmr2ysf
                 
                 cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
@@ -34,6 +42,9 @@ gpio mode 7 in
                 cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
         fi
         # Restart services
+        systemctl restart dmrgateway.service
+        systemctl restart nxdngateway.service
+        systemctl restart p25gateway.service
         systemctl restart ysfgateway.service
         systemctl restart ysf2dmr.service
         systemctl restart ysf2nxdn.service
@@ -63,36 +74,44 @@ do
                 then
                         echo "cfg2 mode"
                         cp /etc/mmdvmhost /home/pi-star/configs/cfg1
+                        cp /etc/dmr2ysf /home/pi-star/configs/dmr2ysfcfg1
+                        cp /etc/dmr2nxdn /home/pi-star/configs/dmr2nxdncfg1
                         cp /etc/ysf2p25 /home/pi-star/configs/ysf2p25cfg1
                         cp /etc/ysf2dmr /home/pi-star/configs/ysf2dmrcfg1
                         cp /etc/ysf2nxdn /home/pi-star/configs/ysf2nxdncfg1
-                        cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg1
+                    #    cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg1
                         echo "Saved cfg1"
 
                         echo " "
                         cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
+                        cp /home/pi-star/configs/dmr2ysfcfg2 /etc/dmr2ysf
+                        cp /home/pi-star/configs/dmr2nxdncfg2 /etc/dmr2nxdn
                         cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
                         cp /home/pi-star/configs/ysf2dmrcfg2 /etc/ysf2dmr
                         cp /home/pi-star/configs/ysf2nxdncfg2 /etc/ysf2nxdn
-                        cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
+                    #    cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
 
                 fi
                 if [ $b -eq 0 ]
                 then
                         echo "cfg1 mode "
                         cp /etc/mmdvmhost /home/pi-star/configs/cfg2
+                        cp /etc/dmr2ysf /home/pi-star/configs/dmr2ysfcfg2
+                        cp /etc/dmr2nxdn /home/pi-star/configs/dmr2nxdncfg2
                         cp /etc/ysf2p25 /home/pi-star/configs/ysf2p25cfg2
                         cp /etc/ysf2dmr /home/pi-star/configs/ysf2dmrcfg2
                         cp /etc/ysf2nxdn /home/pi-star/configs/ysf2nxdncfg2
-                        cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg2
+                    #    cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg2
                         echo "Saved cfg2 "
 
                         echo " "
                         cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
+                        cp /home/pi-star/configs/dmr2ysfcfg1 /etc/dmr2ysf
+                        cp /home/pi-star/configs/dmr2nxdncfg1 /etc/dmr2nxdn
                         cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
                         cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
                         cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
-                        cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
+                   #    cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgate
 
                 fi
 
