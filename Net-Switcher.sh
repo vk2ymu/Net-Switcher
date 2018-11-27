@@ -95,11 +95,11 @@ do
         mount -o remount,ro /
 
         # Restarting services
-        systemctl restart mmdvmhost.service
         systemctl restart ysfgateway.service
         systemctl restart ysf2dmr.service
         systemctl restart ysf2nxdn.service
         systemctl restart ysf2p25.service
+        systemctl restart mmdvmhost.service
         sleep 1
 
         echo " "
