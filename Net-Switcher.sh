@@ -77,7 +77,12 @@ do
                         cp /etc/ysf2p25 /home/pi-star/configs/ysf2p25cfg1
                         cp /etc/ysf2dmr /home/pi-star/configs/ysf2dmrcfg1
                         cp /etc/ysf2nxdn /home/pi-star/configs/ysf2nxdncfg1
-                    #    cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg1
+                        cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg1
+                        cp /etc/p25gateway /home/pi-star/configs/p25gatewaycfg1
+                        cp /etc/nxdngateway /home/pi-star/configs/nxdngatewaycfg1
+                        cp /etc/dmrgateway /home/pi-star/configs/dmrgatewaycfg1
+                    
+                    
                         echo "Saved cfg1"
 
                         echo " "
@@ -87,7 +92,10 @@ do
                         cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
                         cp /home/pi-star/configs/ysf2dmrcfg2 /etc/ysf2dmr
                         cp /home/pi-star/configs/ysf2nxdncfg2 /etc/ysf2nxdn
-                    #    cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
+                        cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
+                        cp /home/pi-star/configs/p25gatewaycfg2 /etc/p25gateway
+                        cp /home/pi-star/configs/nxdngatewaycfg2 /etc/nxdngateway
+                        cp /home/pi-star/configs/dmrgatewaycfg2 /etc/dmrgateway
 
                 fi
                 if [ $b -eq 0 ]
@@ -99,7 +107,11 @@ do
                         cp /etc/ysf2p25 /home/pi-star/configs/ysf2p25cfg2
                         cp /etc/ysf2dmr /home/pi-star/configs/ysf2dmrcfg2
                         cp /etc/ysf2nxdn /home/pi-star/configs/ysf2nxdncfg2
-                    #    cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg2
+                        cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg2
+                        cp /etc/p25gateway /home/pi-star/configs/p25gatewaycfg2
+                        cp /etc/nxdngateway /home/pi-star/configs/nxdngatewaycfg2
+                        cp /etc/dmrgateway /home/pi-star/configs/dmrgatewaycfg2
+                        
                         echo "Saved cfg2 "
 
                         echo " "
@@ -109,7 +121,10 @@ do
                         cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
                         cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
                         cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
-                   #    cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgate
+                        cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
+                        cp /home/pi-star/configs/p25gatewaycfg1 /etc/p25gateway
+                        cp /home/pi-star/configs/nxdngatewaycfg1 /etc/nxdngateway
+                        cp /home/pi-star/configs/dmrgatewaycfg1 /etc/dmrgateway
 
                 fi
 
