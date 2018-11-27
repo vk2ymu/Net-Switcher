@@ -19,7 +19,6 @@ gpio mode 7 in
                 cp /home/pi-star/configs/dmrgatewaycfg2 /etc/dmrgateway
                 cd /home/pi-star/configs/dmr2nxdncfg2 /etc/dmr2nxdn
                 cd /home/pi-star/configs/dmr2ysfcfg2 /etc/dmr2ysf
-                
                 cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
                 cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
@@ -34,7 +33,6 @@ gpio mode 7 in
                 cp /home/pi-star/configs/dmrgatewaycfg1 /etc/dmrgateway
                 cd /home/pi-star/configs/dmr2nxdncfg1 /etc/dmr2nxdn
                 cd /home/pi-star/configs/dmr2ysfcfg1 /etc/dmr2ysf
-                
                 cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
                 cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
