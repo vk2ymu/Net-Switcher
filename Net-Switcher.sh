@@ -14,6 +14,12 @@ gpio mode 7 in
         b=$(gpio read 7)
         if [ $b -eq 1 ]
         then
+                systemctl stop mmdvmhost.service
+                systemctl stop ysfgateway.service
+                systemctl stop ysf2dmr.service
+                systemctl stop ysf2nxdn.service
+                systemctl stop ysf2p25.service
+                
                 cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
                 cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
@@ -23,12 +29,26 @@ gpio mode 7 in
         fi
         if [ $b -eq 0 ]
         then
+                systemctl stop mmdvmhost.service
+                systemctl stop ysfgateway.service
+                systemctl stop ysf2dmr.service
+                systemctl stop ysf2nxdn.service
+                systemctl stop ysf2p25.service
+                
                 cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                 cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
                 cp /home/pi-star/configs/ysf2p25cfg1 /etc/ysf2p25
                 cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
                 cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
         fi
+        # Restart services
+        systemctl restart ysfgateway.service
+        systemctl restart ysf2dmr.service
+        systemctl restart ysf2nxdn.service
+        systemctl restart ysf2p25.service
+        systemctl restart mmdvmhost.service
+        sleep 1
+        
         # Make File system read only
         mount -o remount,ro /
 
