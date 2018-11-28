@@ -73,6 +73,16 @@ do
                 mount -o remount,rw /
                 if [ $b -eq 1 ]
                 then
+                        systemctl stop dmrgateway.service
+                        systemctl stop nxdngateway.service
+                        systemctl stop ysfgateway.service
+                        systemctl stop p25gateway.service
+                        systemctl stop ysf2dmr.service
+                        systemctl stop ysf2nxdn.service
+                        systemctl stop ysf2p25.service
+                        systemctl stop dmr2ysf.service
+                        systemctl stop dmr2nxdn.service
+                        systemctl stop mmdvmhost.service
                         echo "cfg2 mode"
                         cp /etc/mmdvmhost /home/pi-star/configs/cfg1
                         cp /etc/dmr2ysf /home/pi-star/configs/dmr2ysfcfg1
@@ -101,6 +111,17 @@ do
 
                 if [ $b -eq 0 ]
                 then
+                        systemctl stop dmrgateway.service
+                        systemctl stop nxdngateway.service
+                        systemctl stop ysfgateway.service
+                        systemctl stop p25gateway.service
+                        systemctl stop ysf2dmr.service
+                        systemctl stop ysf2nxdn.service
+                        systemctl stop ysf2p25.service
+                        systemctl stop dmr2ysf.service
+                        systemctl stop dmr2nxdn.service
+                        systemctl stop mmdvmhost.service
+                
                         echo "cfg1 mode "
                         cp /etc/mmdvmhost /home/pi-star/configs/cfg2
                         cp /etc/dmr2ysf /home/pi-star/configs/dmr2ysfcfg2
