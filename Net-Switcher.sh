@@ -1,4 +1,5 @@
 # Net-Switcher - Save and select one of two configurations of any mix of parameters by VK2YMU 
+# Version 1.a Beta
 
 #Assign GPIO PIN
 gpio mode 7 in
