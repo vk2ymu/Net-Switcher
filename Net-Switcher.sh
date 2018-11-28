@@ -1,4 +1,4 @@
-# Net-Switcher - Save and select one of two configurations of any mix by VK2YMU 
+# Net-Switcher - Save and select one of two configurations of any mix of parameters by VK2YMU 
 
 #Assign GPIO PIN
 gpio mode 7 in
@@ -10,6 +10,7 @@ gpio mode 7 in
         then
                 mkdir /home/pi-star/configs
         fi
+
 # Cold Start setup - Loading correct config relative to switch position
         b=$(gpio read 7)
         if [ $b -eq 1 ]
@@ -24,8 +25,8 @@ gpio mode 7 in
                 cp /home/pi-star/configs/ysf2p25cfg2 /etc/ysf2p25
                 cp /home/pi-star/configs/ysf2dmrcfg2 /etc/ysf2dmr
                 cp /home/pi-star/configs/ysf2nxdncfg2 /etc/ysf2nxdn
-
         fi
+
         if [ $b -eq 0 ]
         then
                 cp /home/pi-star/configs/p25gatewaycfg1 /etc/p25gateway
@@ -39,6 +40,7 @@ gpio mode 7 in
                 cp /home/pi-star/configs/ysf2dmrcfg1 /etc/ysf2dmr
                 cp /home/pi-star/configs/ysf2nxdncfg1 /etc/ysf2nxdn
         fi
+        
         # Restart services
         systemctl restart dmrgateway.service
         systemctl restart nxdngateway.service
@@ -82,7 +84,6 @@ do
                         cp /etc/dmrgateway /home/pi-star/configs/dmrgatewaycfg1
                         cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg1
                         echo "Saved cfg1"
-
                         echo " "
                         cp /home/pi-star/configs/cfg2 /etc/mmdvmhost
                         cp /home/pi-star/configs/dmr2ysfcfg2 /etc/dmr2ysf
@@ -95,8 +96,8 @@ do
                         cp /home/pi-star/configs/nxdngatewaycfg2 /etc/nxdngateway
                         cp /home/pi-star/configs/dmrgatewaycfg2 /etc/dmrgateway
                         cp /home/pi-star/configs/ysfgatewaycfg2 /etc/ysfgateway
-
                 fi
+
                 if [ $b -eq 0 ]
                 then
                         echo "cfg1 mode "
@@ -111,7 +112,6 @@ do
                         cp /etc/dmrgateway /home/pi-star/configs/dmrgatewaycfg2
                         cp /etc/ysfgateway /home/pi-star/configs/ysfgatewaycfg2
                         echo "Saved cfg2 "
-
                         echo " "
                         cp /home/pi-star/configs/cfg1 /etc/mmdvmhost
                         cp /home/pi-star/configs/dmr2ysfcfg1 /etc/dmr2ysf
@@ -123,7 +123,6 @@ do
                         cp /home/pi-star/configs/nxdngatewaycfg1 /etc/nxdngateway
                         cp /home/pi-star/configs/dmrgatewaycfg1 /etc/dmrgateway
                         cp /home/pi-star/configs/ysfgatewaycfg1 /etc/ysfgateway
-
                 fi
 
         # Make File system read only
